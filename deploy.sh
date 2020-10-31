@@ -11,8 +11,7 @@ kubectl apply -f k8s
 
 echo "kubernetes deployments:"
 kubectl get deployments
-sleep 5s
 
 kubectl set image deployments/server-deployment server=sanok005/multi-server:$SHA
-kubectl set image deployments/client-deployment server=sanok005/multi-client:$SHA
-kubectl set image deployments/worker-deployment server=sanok005/multi-worker:$SHA
+kubectl set image deployments/client-deployment client=sanok005/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=sanok005/multi-worker:$SHA
