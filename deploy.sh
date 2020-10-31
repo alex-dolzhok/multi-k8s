@@ -9,6 +9,7 @@ docker push sanok005/multi-server:$SHA
 docker push sanok005/multi-worker:$SHA
 kubectl apply -f k8s
 sleep 10s
+kubectl get deployments
 kubectl set image deployments/server-deployment server=sanok005/multi-server:$SHA
 kubectl set image deployments/client-deployment server=sanok005/multi-client:$SHA
 kubectl set image deployments/worker-deployment server=sanok005/multi-worker:$SHA
