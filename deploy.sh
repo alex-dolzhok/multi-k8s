@@ -9,7 +9,8 @@ docker push sanok005/multi-server:$SHA
 docker push sanok005/multi-worker:$SHA
 kubectl apply -f k8s
 
-echo "kubernetes deployments:" | kubectl get deployments
+echo "kubernetes deployments:"
+kubectl get deployments
 sleep 5s
 
 kubectl set image deployments/server-deployment server=sanok005/multi-server:$SHA
